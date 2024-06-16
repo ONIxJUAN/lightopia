@@ -2,6 +2,7 @@ body {
   background-color: hsl(220, 93%, 11%);
   color: white;
   font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
 }
 
 header {
@@ -29,6 +30,49 @@ nav a.active:after {
   left: 50%;
   border-radius: 20rem;
   transform: translateX(-50%);
+}
+
+.tickets {
+  background-image: linear-gradient(
+    120deg,
+    hsl(312, 100%, 35%) 0,
+    hsl(220, 88%, 48%) 100%
+  );
+  padding: 1rem;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tickets span {
+  position: relative;
+  z-index: 3;
+}
+
+.tickets::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, #1cce72 0, #0f58e6 150%);
+  overflow: hidden;
+  transform: scaleY(0);
+  border-radius: 1rem;
+  transition: 0.2s ease;
+  z-index: 2;
+}
+
+a.tickets:hover {
+  color: black;
+}
+
+.tickets:hover:after {
+  transform: scaleY(1);
 }
 
 a img {
@@ -64,7 +108,7 @@ video {
   position: absolute;
   bottom: 10%;
   right: 10%;
-  padding: 5rem 3rem;
+  padding: 5rem 5rem;
   border-radius: 100rem;
   display: flex;
   justify-content: center;
@@ -184,7 +228,8 @@ h1 {
 
 .snowflake_bg {
   background-image: url(../img/background-02.png);
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: repeat-y;
 }
 
 .dark_bg {
@@ -270,7 +315,6 @@ h1 {
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 12;
-  background-repeat: no-repeat;
 }
 
 input {
@@ -446,4 +490,191 @@ a.green_underline:hover {
 #img_05_bg {
   top: 29%;
   left: 15%;
+}
+
+.tweede.spotlight {
+  background-image: url(../img/spotlight-02.jpg);
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(9, 0.8fr);
+  width: 120%;
+  transform: translateX(-10%);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.grid_container .image_card {
+  height: 100%;
+  width: 100%;
+}
+
+#div1 {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+#div2 {
+  grid-area: 1 / 4 / 2 / 7;
+}
+
+#div3 {
+  grid-area: 2 / 1 / 3 / 7;
+}
+
+#div4 {
+  grid-area: 3 / 1 / 5 / 3;
+}
+
+#div5 {
+  grid-area: 3 / 5 / 4 / 7;
+}
+
+#div6 {
+  grid-area: 3 / 3 / 4 / 5;
+}
+
+#div7 {
+  grid-area: 4 / 3 / 5 / 7;
+}
+
+#div8 {
+  grid-area: 5 / 1 / 6 / 7;
+}
+
+#div9 {
+  grid-area: 6 / 1 / 7 / 4;
+}
+
+#div10 {
+  grid-area: 6 / 4 / 7 / 7;
+}
+
+#div11 {
+  grid-area: 7 / 1 / 8 / 3;
+}
+
+#div12 {
+  grid-area: 7 / 3 / 8 / 5;
+}
+
+#div13 {
+  grid-area: 7 / 5 / 9 / 7;
+}
+
+#div14 {
+  grid-area: 8 / 1 / 9 / 5;
+}
+
+#div15 {
+  grid-area: 9 / 1 / 10 / 7;
+}
+
+.galerij.background_assets {
+  transform: translateY(50%);
+}
+
+#menu-toggle {
+  display: none;
+  width: 3rem;
+  height: 2rem;
+  transform: translate(60%, 60%);
+}
+
+.topBottom-line {
+  height: 0.3rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.middle-line {
+  height: 0.3rem;
+  margin-left: auto;
+  width: 2rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+@media (max-width: 62.5rem) {
+  nav ul a {
+    display: none;
+  }
+
+  nav ul a.tickets {
+    display: block;
+  }
+
+  nav ul li#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: stretch;
+    cursor: pointer;
+    z-index: 11;
+  }
+}
+
+.overlay {
+  background-color: hsl(220, 93%, 11%);
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.overlay ul {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15rem;
+}
+
+.overlay ul #menu-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.overlay ul #menu-toggle .middle-line {
+  display: none;
+}
+
+.overlay ul #menu-toggle span:first-of-type {
+  rotate: 45deg;
+  transform: translate(10%, -10%);
+}
+
+.overlay ul #menu-toggle span:last-of-type {
+  rotate: -45deg;
+  transform: translate(5%, -5%);
+}
+
+.overlay ul a.active:after {
+  content: "";
+  width: 100%;
+  height: 0.2rem;
+  background: hsl(149, 76%, 56%);
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform-origin: center;
+  border-radius: 20rem;
+  transform: translateX(-50%);
+}
+
+nav ul #home,
+nav ul #languages {
+  display: none;
+}
+
+.overlay #home,
+.overlay #languages {
+  display: block;
+}
+
+.green {
+  color: hsl(149, 76%, 56%);
 }

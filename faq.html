@@ -8,21 +8,35 @@
 
   <link rel="stylesheet" href="static/css/reset.css" />
   <link rel="stylesheet" href="static/css/main.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <nav>
       <a href="index.html"><img src="static/img/logo.svg" /></a>
-      <ul>
+      <ul id="nav">
+        <li id="home"><a href="index.html">HOME</a></li>
         <li><a href="parcours.html">PARCOURS</a></li>
         <li><a href="praktisch.html">PRAKTISCH</a></li>
         <li><a href="galerij.html">GALERIJ</a></li>
         <li><a class="active p_relative" href="faq.html">FAQ</a></li>
-        <li><a href="#">TICKETS</a></li>
+        <li><a class="tickets" href="#"><span>TICKETS</span></a></li>
+        <li id="menu-toggle" onclick="nav_toggle()">
+          <span class="topBottom-line"></span>
+          <span class="middle-line"></span>
+          <span class="topBottom-line"></span>
+        </li>
+        <li id="languages">
+          <a href="#">NL</a> <span class="green">|</span> <a href="#">FR</a> <span class="green">|</span> <a href="#">EN</a>
+        </li>
       </ul>
     </nav>
   </header>
   <main>
+    <div id="nav_overlay_bg"></div>
     <section class="container center margin_auto top_padding">
       <h1>HOE KUNNEN WE JE HELPEN</h1>
       <div class="container_mini center margin_auto">
@@ -120,5 +134,6 @@
   <script src="data/faq.js"></script>
   <script src="static/js/faq.js"></script>
   <script src="static/js/flexContainer.js"></script>
+  <script src="static/js/nav.js"></script>
 </body>
 </html>
